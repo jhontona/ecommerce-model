@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/ECommerceModel/src-gen" creationIcons="false"
+    editDirectory="/ECommerceModel.edit/src-gen" editorDirectory="/ECommerceModel.editor/src-gen"
+    modelPluginID="ECommerceModel" modelName="ECommerceModel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>eCommerceModel.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="ECommerceModel" disposableProviderFactory="true" ecorePackage="eCommerceModel.ecore#/">
+    <genClasses ecoreClass="eCommerceModel.ecore#//Product">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCommerceModel.ecore#//Product/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCommerceModel.ecore#//Product/description"/>
+    </genClasses>
+    <genClasses ecoreClass="eCommerceModel.ecore#//Category">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCommerceModel.ecore#//Category/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eCommerceModel.ecore#//Category/product"/>
+    </genClasses>
+    <genClasses ecoreClass="eCommerceModel.ecore#//Provider">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCommerceModel.ecore#//Provider/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eCommerceModel.ecore#//Provider/product"/>
+    </genClasses>
+    <genClasses ecoreClass="eCommerceModel.ecore#//Customer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCommerceModel.ecore#//Customer/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCommerceModel.ecore#//Customer/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCommerceModel.ecore#//Customer/address"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCommerceModel.ecore#//Customer/email"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCommerceModel.ecore#//Customer/username"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCommerceModel.ecore#//Customer/password"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eCommerceModel.ecore#//Customer/shoppingcart"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eCommerceModel.ecore#//Customer/invoice"/>
+    </genClasses>
+    <genClasses ecoreClass="eCommerceModel.ecore#//Invoice">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCommerceModel.ecore#//Invoice/number"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eCommerceModel.ecore#//Invoice/product"/>
+    </genClasses>
+    <genClasses ecoreClass="eCommerceModel.ecore#//Stock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCommerceModel.ecore#//Stock/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCommerceModel.ecore#//Stock/address"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eCommerceModel.ecore#//Stock/product"/>
+    </genClasses>
+    <genClasses ecoreClass="eCommerceModel.ecore#//ShoppingCart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eCommerceModel.ecore#//ShoppingCart/date"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eCommerceModel.ecore#//ShoppingCart/product"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
